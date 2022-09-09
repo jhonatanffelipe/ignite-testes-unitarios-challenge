@@ -1,5 +1,3 @@
-import 'reflect-metadata';
-
 import { CreateUserUseCase } from './CreateUserUseCase';
 
 import { InMemoryUsersRepository } from '../../repositories/in-memory/InMemoryUsersRepository';
