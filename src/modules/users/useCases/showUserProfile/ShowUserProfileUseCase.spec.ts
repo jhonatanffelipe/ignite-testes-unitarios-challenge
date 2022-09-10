@@ -1,4 +1,4 @@
-import { CreateUserUseCase } from './../createUser/CreateUserUseCase';
+import { ShowUserProfileError } from './ShowUserProfileError';
 import { ShowUserProfileUseCase } from './ShowUserProfileUseCase';
 import { InMemoryUsersRepository } from './../../repositories/in-memory/InMemoryUsersRepository';
 
@@ -21,5 +21,9 @@ describe('Show user profile', () => {
     const profile = await showUserProfileUseCase.execute(user.id ? user.id : '');
 
     expect(profile).toHaveProperty('id');
+  });
+
+  it('should not be possible to list an unregistered user', async () => {
+    await expect(showUserProfileUseCase.execute('ideinexistente')).rejects.toEqual(new ShowUserProfileError());
   });
 });

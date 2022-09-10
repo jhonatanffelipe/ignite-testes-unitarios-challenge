@@ -17,7 +17,7 @@ describe('Create User', () => {
     const user: ICreateUserDTO = {
       name: 'John Doe',
       email: 'johndoe@gmail.com',
-      password: '123456',
+      password: 'Mudar@123456',
     };
 
     const result = await createUserUseCase.execute(user);
@@ -29,7 +29,7 @@ describe('Create User', () => {
     const user: ICreateUserDTO = {
       name: 'John Doe',
       email: 'johndoe@gmail.com',
-      password: '123456',
+      password: 'Mudar@123456',
     };
 
     await createUserUseCase.execute(user);
